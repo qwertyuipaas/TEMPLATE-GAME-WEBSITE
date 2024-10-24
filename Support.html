@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RAGE GAMES Support</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html, body {
+      min-height: 100vh;
+      background-color: #1b1c1d;
+      color: white;
+      font-family: Arial, sans-serif; 
+    }
+    header {
+      background-color: #171a21;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header .logo {
+      font-size: 24px;
+      color: #66c0f4;
+    }
+    header nav a {
+      color: #66c0f4;
+      text-decoration: none;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: bold;
+      font-size: 18px;
+      margin-left: 20px;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      font-size: 24px;
+      color: #66c0f4;
+    }
+
+    .logo-img {
+      width: 80px;
+      height: auto;
+      margin-right: 10px;
+    }
+    .main-content {
+      padding: 20px;
+      margin-top: 80px;
+      min-height: 100vh;
+    }
+    .search-support {
+      background-color: #2a2d33;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 40px;
+    }
+    .search-support input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      font-family: Arial, sans-serif;
+    }
+    .support-issue-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    .support-issue-item {
+      background-color: #2a2d33;
+      padding: 20px;
+      border-radius: 10px;
+      margin: 10px;
+      flex-basis: 48%;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .support-issue-item:hover {
+      background-color: #3a3f47;
+    }
+    .support-issue-item h4 {
+      font-size: 18px;
+      margin-bottom: 10px;
+      font-family: Arial, sans-serif;
+    }
+    .support-issue-item p {
+      font-size: 14px;
+      color: #ccc;
+      font-family: Arial, sans-serif;
+    }
+    .support-description {
+      background-color: #2a2d33;
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+    .support-description h2 {
+      margin-bottom: 20px;
+      font-family: Arial, sans-serif;
+    }
+    .support-description p {
+      font-size: 16px;
+      color: #ccc;
+      line-height: 1.6;
+      font-family: Arial, sans-serif;
+    }
+    .faq-section {
+      margin-top: 40px;
+    }
+    .faq-item {
+      background-color: #2a2d33;
+      padding: 15px;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+    .faq-item h4 {
+      margin-bottom: 10px;
+      font-family: Arial, sans-serif;
+    }
+    .contact-support {
+      background-color: #2a2d33;
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 40px;
+    }
+    .contact-support h2 {
+      margin-bottom: 20px;
+      font-family: Arial, sans-serif;
+    }
+    .social-media {
+      margin-top: 20px;
+    }
+    .social-media a {
+      color: #66c0f4;
+      margin-right: 15px;
+      text-decoration: none;
+      font-size: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <img src="https://static.wikia.nocookie.net/logopedia/images/d/de/Rage-game.png/revision/latest?cb=20220612155706" alt="RAGE GAMES Logo" class="logo-img">
+       GAMES
+    </div>
+    <nav>
+      <a href="RAGE GAMES.html">Store</a>
+      <a href="About us.html">About Us</a>
+      <a href="Support.html">Support</a>
+    </nav>
+  </header>
+
+  <div class="main-content">
+    <div class="search-support">
+      <h3>How can we help you?</h3>
+      <input type="text" placeholder="Search for support articles...">
+    </div>
+
+    <div class="support-issue-list">
+      <div class="support-issue-item">
+        <h4>Account Issues</h4>
+        <p>Help with login, password recovery, and managing account settings.</p>
+      </div>
+      <div class="support-issue-item">
+        <h4>Purchasing and Billing</h4>
+        <p>Learn how to make purchases, manage billing, or get refunds.</p>
+      </div>
+      <div class="support-issue-item">
+        <h4>Game Installation</h4>
+        <p>Guides on how to download, install, or update your games.</p>
+      </div>
+      <div class="support-issue-item">
+        <h4>Technical Support</h4>
+        <p>Find solutions for game crashes, performance issues, or bugs.</p>
+      </div>
+    </div>
+
+    <div class="support-description">
+      <h2>Popular Articles</h2>
+      <p><strong>How to Recover Your Account:</strong> If you’ve lost access to your account, follow our step-by-step guide to reset your password and regain access.</p>
+      <p><strong>Refund Policy:</strong> Learn about our refund policies and how to request a refund for a game purchase.</p>
+      <p><strong>Troubleshooting Game Crashes:</strong> If your game crashes or freezes, follow these steps to resolve the issue and get back to gaming.</p>
+    </div>
+
+    <div class="faq-section">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item">
+        <h4>What should I do if I can't log into my account?</h4>
+        <p>Make sure you are using the correct email and password. If you forgot your password, use the "Forgot Password" feature to reset it.</p>
+      </div>
+      <div class="faq-item">
+        <h4>How can I request a refund?</h4>
+        <p>To request a refund, go to the purchases section in your account settings and select the game you wish to refund. Follow the prompts to complete your request.</p>
+      </div>
+      <div class="faq-item">
+        <h4>How can I contact support?</h4>
+        <p>You can contact our support team through the "Contact Us" section below or reach out via social media.</p>
+      </div>
+    </div>
+
+    <div class="contact-support">
+      <h2>Contact Support</h2>
+      <p>If you need further assistance, please reach out to us:</p>
+      <p>Email: <a href="mailto:support@ragegames.com">support@ragegames.com</a></p>
+      <p>Phone: <a href="tel:+1234567890">+1 (234) 567-890</a></p>
+      <div class="social-media">
+        <h4>Follow Us:</h4>
+        <a href="#" target="_blank">Facebook</a>
+        <a href="#" target="_blank">Twitter</a>
+        <a href="#" target="_blank">Instagram</a>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

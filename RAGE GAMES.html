@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RAGE GAMES Store</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      min-height: 100vh;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #1b1c1d;
+      color: white;
+      overflow-x: hidden;
+    }
+    body:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+        url('https://www.transparenttextures.com/patterns/cubes.png'),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0));
+    opacity: 0.1;
+    pointer-events: none;
+    z-index: -1;
+    }
+    
+
+    header {
+      background-color: #171a21;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    header .logo {
+      font-size: 24px;
+      color: #66c0f4;
+    }
+
+    header nav {
+      display: flex;
+      gap: 20px;
+    }
+
+    header nav a {
+      color: #66c0f4;
+      text-decoration: none;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: bold;
+      font-size: 18px;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      font-size: 24px;
+      color: #66c0f4;
+    }
+
+    .logo-img {
+      width: 80px;
+      height: auto;
+      margin-right: 10px;
+    }
+
+    .search-bar {
+      padding: 8px;
+      border-radius: 4px;
+      border: none;
+      width: 200px;
+    }
+
+    .side-menu {
+      position: fixed;
+      left: 0;
+      top: 80px;
+      width: 200px;
+      background-color: #2a2d33;
+      padding: 20px;
+      height: 100%;
+    }
+
+    .side-menu h3 {
+      color: #66c0f4;
+      margin-bottom: 15px;
+    }
+
+    .side-menu ul {
+      list-style: none;
+    }
+
+    .side-menu ul li {
+      margin-bottom: 10px;
+    }
+
+    .side-menu ul li a {
+      color: white;
+      text-decoration: none;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .side-menu ul li a:hover {
+      color: #66c0f4;
+    }
+
+    .main-content {
+      margin-left: 220px;
+      padding: 20px;
+      margin-top: 80px;
+      min-height: 280vh;
+    }
+
+    .featured-game {
+      background-color: #2a2d33;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 50px;
+      display: flex;
+      align-items: center;
+    }
+
+    .featured-game img {
+      width: 60%;
+      border-radius: 10px;
+    }
+
+    .featured-game .game-info {
+      margin-left: 20px;
+    }
+
+    .featured-game .game-info h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .featured-game .game-info p {
+      margin-bottom: 10px;
+    }
+
+    .game-tags span {
+      display: inline-block;
+      background-color: #3a3f47;
+      padding: 5px 10px;
+      border-radius: 5px;
+      font-size: 12px;
+      margin-right: 5px;
+    }
+
+    .special-offers {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    .special-offers-container {
+      display: flex;
+      justify-content: center;
+    }
+
+    .special-offer-card {
+      background-color: #2a2d33;
+      padding: 15px;
+      border-radius: 10px;
+      text-align: center;
+      width: 450px;
+      margin: 0 10px;
+      flex-shrink: 0;
+    }
+
+    .special-offer-card img {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+      border-radius: 5px;
+    }
+
+    .special-offer-card h3 {
+      font-size: 20px;
+      margin: 15px 0;
+    }
+
+    .special-offer-card p {
+      color: #66c0f4;
+      font-size: 18px;
+    }
+    .days-gone-poster {
+        position: relative;
+        background-image: url('https://image.api.playstation.com/vulcan/ap/rnd/202011/0921/B7jV8ThPs8eqDz8NRRllf7g6.jpg');
+        background-size: cover;
+        background-position: center;
+        height: 1000px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        border-radius: 10px;
+        margin-top: 50px;
+        overflow: hidden;
+        opacity: 0.3;
+        transition: opacity 1s ease-in-out;
+        }
+
+        .days-gone-poster:hover {
+        opacity: 1;
+        }
+
+        .poster-info {
+        text-align: center;
+        color: #ffffff;
+        margin-right: 40px;
+        }
+
+        .poster-info h2 {
+        font-size: 48px;
+        font-family: 'Bebas Neue', sans-serif;
+        color: #ffffff;
+        margin-bottom: 20px;
+        }
+
+        .poster-info p {
+        font-size: 28px;
+        font-family: 'Bebas Neue', sans-serif;
+        color: #ffffff;
+        margin-bottom: 30px;
+        }
+
+        .trailer-button {
+        background-color: transparent;
+        color: #ffffff;
+        border: 2px solid #ffffff;
+        padding: 15px 30px;
+        font-size: 24px;
+        font-family: 'Bebas Neue', sans-serif;
+        cursor: pointer;
+        }
+
+        .trailer-button:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+        }
+
+
+
+        @media (max-width: 768px) {
+        .days-gone-poster {
+            height: 350px;
+        }
+
+        .poster-overlay h2 {
+            font-size: 30px;
+        }
+
+        .poster-overlay p {
+            font-size: 18px;
+        }
+
+        .trailer-button {
+            font-size: 16px;
+            padding: 10px 20px;
+        }
+        }
+
+    .prev, .next {
+      background-color: transparent;
+      color: white;
+      border: none;
+      padding: 30px;
+      cursor: pointer;
+      position: absolute;
+      top: 40%;
+      transform: translateY(-50%);
+      font-size: 50px;
+      z-index: 1;
+    }
+
+    .prev {
+      left: 5px;
+    }
+
+    .next {
+      right: 5px;
+    }
+
+
+   .subscribe-section {
+      background-color: #2a2d33;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .subscribe-section input[type="email"] {
+      padding: 10px;
+      width: 300px;
+      border-radius: 5px;
+      border: none;
+      margin-right: 10px;
+    }
+
+    .subscribe-section button {
+      padding: 10px 20px;
+      background-color: #66c0f4;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      cursor: pointer;
+    }
+    .game-description {
+      margin-top: 15px;
+      padding: 10px;
+      border: 2px solid #1b1c1d;
+      border-radius: 5px;
+      background-color: #2a2d33;
+      font-size: 14px;
+      line-height: 1.5;
+      color: #ccc;
+    }
+    .game-details {
+      margin-top: 15px;
+      padding: 10px;
+      border-top: 1px solid #444;
+      color: #ccc;
+      font-size: 14px;
+    }
+
+    .game-details p {
+      margin: 5px 0;
+    }
+
+    .game-details strong {
+      color: #66c0f4;
+    }
+    .browse-categories {
+      margin-top: 50px;
+      text-align: center;
+    }
+
+    .browse-categories h3 {
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: bold;
+      font-size: 36px;
+      margin-bottom: 20px;
+      color: #66c0f4;
+    }
+
+    .categories-list {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .category-card {
+      background-color: #2a2d33;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      width: 200px;
+    }
+    .category-card img {
+      width: 100%;
+      height: auto;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
+
+    .category-card h4 {
+      font-size: 24px;
+      margin: 10px 0;
+      color: #66c0f4;
+    }
+
+    .category-card a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .category-card a:hover {
+      color: #66c0f4;
+    }
+    .category-card:hover {
+      background-color: #343a40;
+      transform: scale(1.05);
+      transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+
+
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <img src="https://static.wikia.nocookie.net/logopedia/images/d/de/Rage-game.png/revision/latest?cb=20220612155706" alt="RAGE GAMES Logo" class="logo-img">
+       GAMES
+    </div>
+    <nav>
+      <a href="RAGE GAMES.html">Store</a>
+      <a href="About us.html">About Us</a>
+      <a href="Support.html">Support</a>
+    </nav>
+    <input class="search-bar" type="text" placeholder="Search games...">
+  </header>
+
+  <div class="side-menu">
+    <h3>Categories</h3>
+    <ul>
+      <li><a href="#">Top Sellers</a></li>
+      <li><a href="#">New Releases</a></li>
+      <li><a href="#">Upcoming</a></li>
+      <li><a href="#">VR Titles</a></li>
+    </ul>
+
+    <h3>Genres</h3>
+    <ul>
+      <li><a href="#">Action</a></li>
+      <li><a href="#">Adventure</a></li>
+      <li><a href="#">RPG</a></li>
+      <li><a href="#">Strategy</a></li>
+    </ul>
+    
+  </div>
+</div>
+
+  <div class="main-content">
+    <div class="featured-game">
+      <img src="https://gaming-cdn.com/images/products/1028/orig/7-days-to-die-pc-mac-game-steam-cover.jpg?v=1723190669" alt="Featured Game">
+      <div class="game-info">
+        <h2>7 Days to Die</h2>
+        <p>Recommended because you played games tagged with Zombies, FPS, Survival.</p>
+        <div class="game-tags">
+          <span>Zombies</span>
+          <span>FPS</span>
+          <span>Survival</span>
+          <span>Online Co-op</span>
+        </div>
+        <div class="game-description">
+          <p>7 Days to Die is an open-world game that is a unique combination of first-person shooter, survival horror, tower defense, and role-playing games. Play the definitive zombie survival sandbox RPG that came first. Navezgane awaits!</p>
+        </div>
+        <div class="game-details">
+          <p><strong>Release Date:</strong> December 13, 2013</p>
+          <p><strong>Developer:</strong> The Fun Pimps</p>
+          <p><strong>Publisher:</strong> The Fun Pimps Entertainment LLC</p>
+          <p><strong>Rating:</strong> 9/10 (Rage Games)</p>
+          <p><strong>Platforms:</strong> PC, Mac, Xbox One, PlayStation 4</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="subscribe-section">
+      <h3>Subscribe to Our Newsletter</h3>
+      <input type="email" placeholder="Enter your email">
+      <button>Subscribe</button>
+    </div>
+    
+
+    <div class="special-offers">
+      <button class="prev">&#10094;</button>
+      <div class="special-offers-container" id="offers-container">
+ 
+      </div>
+      <button class="next">&#10095;</button>
+    </div>
+
+    <div class="days-gone-poster">
+        <div class="poster-info">
+          <h2>Days Gone</h2>
+          <p>"Survive the wilderness, outsmart the Freakers."</p>
+          <button class="trailer-button" onclick="window.open('https://www.youtube.com/watch?v=FKtaOY9lMvM', '_blank')">Watch Game Trailer</button>
+        </div>
+      </div>
+
+
+      <div class="browse-categories">
+        <h3>Browse by Category</h3>
+        <div class="categories-list">
+          <div class="category-card">
+            <img src="https://cdn4.iconfinder.com/data/icons/video-game-23/100/video_game_play-07-512.png" alt="Action">
+            <h4>Action</h4>
+            <a href="#">Explore Games</a>
+          </div>
+          <div class="category-card">
+            <img src="https://cdn1.iconfinder.com/data/icons/game-and-interface-outline/64/GAMES_AND_INTERFACES_58-512.png" alt="Adventure">
+            <h4>Adventure</h4>
+            <a href="#">Explore Games</a>
+          </div>
+          <div class="category-card">
+            <img src="https://cdn3.iconfinder.com/data/icons/edu-app-ui-mono/100/games_2-512.png" alt="RPG">
+            <h4>RPG</h4>
+            <a href="#">Explore Games</a>
+          </div>
+          <div class="category-card">
+            <img src="https://cdn0.iconfinder.com/data/icons/game-genre-outline/64/Game_Genre_Action-512.png" alt="Shooter">
+            <h4>Shooter</h4>
+            <a href="#">Explore Games</a>
+          </div>
+          <div class="category-card">
+            <img src="https://cdn-icons-png.flaticon.com/512/522/522153.png" alt="Puzzle">
+            <h4>Puzzle</h4>
+            <a href="#">Explore Games</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    const offers = [
+      { img: "https://media.graphassets.com/I4QiHGSKQBWiLm9Dq2Os", title: "Dark Souls III", price: "$120.99" },
+      { img: "https://image.api.playstation.com/cdn/HP0506/CUSA13910_00/QKJRzanGk86ezpx2pk5QqQaduoXGJV3u8vHIejSav4MYiHA3F7zNgxSOF9bJmt2T.png", title: "Sekiro", price: "$100.99" },
+      { img: "https://cdn2.unrealengine.com/bl3wide-2560x1440-2560x1440-462318f36bee20de4412e111ef72dc62-2560x1440-9c1f12a55f2b.jpg?resize=1&w=480&h=270&quality=medium", title: "Borderlands 3", price: "$125.99" },
+      { img: "https://dayz.com/img/dayz-og-thumb.png", title: "Day Z", price: "$19.99" },
+      { img: "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/782330/capsule_616x353.jpg?t=1702308063", title: "Doom Eternal", price: "$59.99" },
+      { img: "https://upload.wikimedia.org/wikipedia/en/9/9f/Cyberpunk_2077_box_art.jpg", title: "Cyberpunk 2077", price: "$49.99" }
+    ];
+
+    let currentIndex = 0;
+
+    const offersContainer = document.getElementById('offers-container');
+
+    function renderOffers(index) {
+      offersContainer.innerHTML = '';
+      for (let i = 0; i < 3; i++) {
+        const offer = offers[(index + i) % offers.length];
+        const offerCard = `
+          <div class="special-offer-card">
+            <img src="${offer.img}" alt="${offer.title} Special Offer">
+            <h3>${offer.title}</h3>
+            <p class="price">${offer.price}</p>
+          </div>
+        `;
+        offersContainer.innerHTML += offerCard;
+      }
+    }
+
+    document.querySelector('.next').addEventListener('click', () => {
+      currentIndex = (currentIndex + 3) % offers.length;
+      renderOffers(currentIndex);
+    });
+
+    document.querySelector('.prev').addEventListener('click', () => {
+      currentIndex = (currentIndex - 3 + offers.length) % offers.length;
+      renderOffers(currentIndex);
+    });
+
+
+    renderOffers(currentIndex);
+  </script>
+  
+
+</body>
+</html>
